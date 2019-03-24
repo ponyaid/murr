@@ -34,7 +34,6 @@
 
         </button>
 
-
         <div class="collapse navbar-collapse" id="base_navbar">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
@@ -44,7 +43,10 @@
                     <a href="#About" class="nav-link text-center">Как работает?</a>
                 </li>
                 <li class="nav-item">
-                    <a href="https://www.youtube.com/murrengan" class="nav-link text-center">Я в деле!</a>
+                    <a href="{% url 'index' %}" class="nav-link text-center">Все Мурры</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="nav-link text-center">Регистрация(НЕ РАБОТАЕТ!)</a>
                 </li>
             </ul>
         </div>
@@ -56,11 +58,11 @@
     <div id="header" class="container text-white text-center">
         <h1 class="display-4">Murrengan</h1>
         <p class="lead">Создай команду или присоеденись к существующей</p>
-        <button id="" class="btn btn-lg btn-info px-5 mt-2" data-toggle="modal" data-target="#bokingModel">
+        <button id="#About" class="btn btn-lg btn-info px-5 mt-2" data-toggle="modal" data-target="#bokingModel">
             Куда я попал?
         </button>
         <button id="" class="btn btn-lg btn-danger px-5 mt-2" data-toggle="modal" data-target="#bokingModel">
-            Вступить!
+            Вступить!(РЕГИСТРАЦИЯ!)
         </button>
     </div>
 </section>
