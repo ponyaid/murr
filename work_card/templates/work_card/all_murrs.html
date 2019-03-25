@@ -1,0 +1,15 @@
+{% extends 'basic.html' %}
+
+
+
+
+{% block content %}
+    <div class="b">
+    {% for murr in all_murrs %}
+        <h2>{{ murr.title }}</h2>
+        <p>{{ murr.description }}</p>
+        <p><a href="{% url 'by_rubric' murr.rubric.pk %}">{{ murr.rubric.rubric }}</a></p>
+        <p>{{ murr.published|date:'d.m.y h:i' }}</p>
+    {% endfor %}
+    </div>
+{% endblock %}

@@ -6,6 +6,10 @@
 
 Социальная сеть, где люди помогают друг другу в достижении поставленных целей.
 
+Креды суперюзера:
+
+admin/admin
+
 [Youtube](https://www.youtube.com/murrengan) канал со стримами и разбором кода.
 
 [Telegram](https://t.me/MurrenganChat) вся тусовка тут.

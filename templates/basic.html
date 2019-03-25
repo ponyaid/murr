@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="shortcut icon" type="image/png" href="{% static 'base/favicon.ico' %}">
     <title>{% block title %}Главная{% endblock %} - Murrengan</title>
 </head>
+
 <body>
 
 <nav class="navbar navbar-expand-sm navbar-light sticky-top bg-light">
     <div class="container">
+
         <a class="navbar-brand" href="{% url 'index' %}">
             <img src="{% static 'base/favicon.ico' %}" width="30" height="30" alt="favicon" class="d-inline-block align-top">
             Murrengan
@@ -25,24 +28,35 @@
         <div class="collapse navbar-collapse" id="base_navbar">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a href="#" class="nav-link active text-center">О нас</a>
+                <li class="nav-item">
+                    <a href="{% url 'index' %}" class="nav-link text-center">Все Мурры</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link text-center">Как работает?</a>
+                    <a href="{% url 'add' %}" class="nav-link text-center">Добавить Мурр</a>
                 </li>
-                <li class="nav-item">
-                    <a href="https://www.youtube.com/murrengan" class="nav-link text-center">Я в деле!</a>
-                </li>
-                <li class="nav-item">
-                    <a href="{% url 'add' %}" class="nav-link text-center">Добавить</a>
-                </li>
-
             </ul>
         </div>
     </div>
 </nav>
 
 
+
+<div class="container text-center mt-3">
+{% block rubrics %}
+{% for rubric in rubrics %}
+    <a href="{% url 'by_rubric' rubric.pk %}">{{ rubric.rubric }}</a>
+{% endfor %}
+{% endblock %}
+</div>
+
+
+<section>
+<div class="container mt-4">
+    {% block content %}
+
+    {% endblock %}
+</div>
+</section>
 
 
 </body>

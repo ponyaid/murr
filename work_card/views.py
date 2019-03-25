@@ -7,26 +7,26 @@ from .models import WorkCard, Rubric
 
 
 def index(request):
-    works = WorkCard.objects.all()
+    all_murrs = WorkCard.objects.all()
     rubrics = Rubric.objects.all()
-    context = {'works': works, 'rubrics': rubrics}
-    return render(request, 'index.html', context)
+    context = {'all_murrs': all_murrs, 'rubrics': rubrics}
+    return render(request, 'work_card/all_murrs.html', context)
 
 
 def by_rubric(request, rubric_id):
-    works_lists_by_rubric = WorkCard.objects.filter(rubric=rubric_id)
+    murr_list_by_rubric_id = WorkCard.objects.filter(rubric=rubric_id)
     all_rubrics = Rubric.objects.all()
     current_rubric = Rubric.objects.get(pk=rubric_id)
     context = {
-        'works_lists_by_rubric_id': works_lists_by_rubric,
+        'murr_list_by_rubric_id': murr_list_by_rubric_id,
         'all_rubrics': all_rubrics,
         'current_rubric': current_rubric
     }
-    return render(request, 'by_rubric.html', context)
+    return render(request, 'work_card/by_rubric.html', context)
 
 
 class WorkCardCreateView(CreateView):
-    template_name = 'work_card/create_work_card.html'
+    template_name = 'work_card/create_murr.html'
     form_class = WorkCardForm
     success_url = reverse_lazy('index')
 

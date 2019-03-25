@@ -1,0 +1,18 @@
+{% extends 'basic.html' %}
+
+{% block title %}
+    {{ current_rubric.rubric }} - Мурры
+{% endblock %}
+
+{% block content %}
+    <h2>Мурры на тему: {{ current_rubric.rubric }}</h2>
+
+    {% for murr in murr_list_by_rubric_id %}
+        <h3>{{ murr.title }}</h3>
+        <p>{{ murr.description }}</p>
+        <p>{{ murr.published|date:'d.m.y h:i' }}</p>
+
+    {% endfor %}
+
+
+{% endblock %}
