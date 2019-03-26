@@ -26,6 +26,8 @@ git push
 
 [Telegram](https://t.me/MurrenganChat) вся тусовка тут.
 
+[Trello](https://trello.com/b/yfjytAFU/murrengan) список задач.
+
 Да пребудет с нами сила!
 
 
